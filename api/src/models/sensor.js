@@ -13,7 +13,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     preSanguinea: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNullL: false,
     },
     freRespiratoria: {

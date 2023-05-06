@@ -1,4 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import usuarioSlice from './usuarioSlice';
+import criasSlice from './criasSlice';
 
 // import languageReducer from './languageSlice';
 // import reviewsReducer from './reviewsSlice';
@@ -11,6 +13,8 @@ import { combineReducers } from '@reduxjs/toolkit';
 // import cartReducer from './cartSlice'
 
 const rootReducer = combineReducers({
+  usuario: usuarioSlice,
+  crias: criasSlice,
   // language: languageReducer,
   // reviews: reviewsReducer,
   // user: userReducer,
