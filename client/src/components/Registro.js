@@ -24,8 +24,8 @@ const Registro = () => {
 
   const handleInputChange = (event) => {
     event.preventDefault();
-    setInput({ [event.target.name]: event.target.value });
-    setErrors(Validate({ [event.target.name]: event.target.value }));
+    setInput({ ...input, [event.target.name]: event.target.value });
+    setErrors(Validate({ ...input, [event.target.name]: event.target.value }));
   };
   const handleSubmit = (event) => {
     event.preventDefault();

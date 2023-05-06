@@ -3,14 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 export const criasSlice = createSlice({
   name: 'crias',
   initialState: {
-    fecha: '',
-    peso: '',
-    costo: '',
-    nomber: '',
-    description: '',
-    saludable: '',
-    dieta: '',
-    tratamiento: '',
+    // fecha: '',
+    // peso: '',
+    // costo: '',
+    // nomber: '',
+    // description: '',
+    // saludable: '',
+    // dieta: '',
+    // tratamiento: '',
+    crias: [],
   },
   reducers: {
     addCow: (state, action) => {
@@ -18,15 +19,15 @@ export const criasSlice = createSlice({
         ...state,
       };
     },
-    getRol: (state, action) => {
+    getSick: (state, action) => {
       return {
         ...state,
-        rol: action.payload.rol,
+        crias: action.payload,
       };
     },
   },
 });
 
-export const { addCow, addUser } = criasSlice.actions;
+export const { addCow, getSick } = criasSlice.actions;
 
 export default criasSlice.reducer;

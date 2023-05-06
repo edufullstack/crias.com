@@ -5,22 +5,28 @@ import { getUsuario } from '../redux/usuarioActions';
 import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
-  const [id, setId] = useState({ id: '' });
+  const [usuario, setUsuario] = useState({ id: '', password: '' });
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
-    setId({ [event.target.name]: event.target.value });
+    setUsuario({ ...usuario, [event.target.name]: event.target.value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(getUsuario(id));
+    dispatch(getUsuario(usuario));
     navigate('/dashboard');
   };
   return (
     <div>
-      <h2>Ingrese su id de usuario</h2>
-      <input name='id' value={id.id} onChange={handleInputChange} />
+      <label>Ingrese su id de usuario</label>
+      <input name='id' value={usuario.id} onChange={handleInputChange} />
+      <label>Contrasena</label>
+      <input
+        name='password'
+        value={usuario.password}
+        onChange={handleInputChange}
+      />
       <button onClick={handleSubmit}> Entrar</button>
     </div>
   );
