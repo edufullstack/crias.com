@@ -8,10 +8,10 @@ export const getCrias = async () => {
       },
     });
     console.log(crias);
-    if (crias) {
-      return crias;
+    if (crias.length === 0) {
+      return 'No se encontraron crias enfermas';
     } else {
-      throw new Error('No se encontraron registros');
+      return crias;
     }
   } catch (error) {
     return error.message;

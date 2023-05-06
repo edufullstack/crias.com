@@ -9,31 +9,31 @@ module.exports = (sequelize) => {
     },
     proveedor: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     fecha: {
       type: DataTypes.DATEONLY,
-      allowNull: false,
+      allowNull: true,
     },
     peso: {
       type: DataTypes.INTEGER,
-      allowNullL: false,
+      allowNullL: true,
     },
     costo: {
       type: DataTypes.FLOAT,
-      allowNull: false,
+      allowNull: true,
     },
     nombre: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     descripcion: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     saludable: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
     },
     dieta: {
       type: DataTypes.TEXT,
