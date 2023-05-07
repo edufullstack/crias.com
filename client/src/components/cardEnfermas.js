@@ -58,8 +58,8 @@ const CardEnfermas = (props) => {
   };
 
   return (
-    <div className='card col-md-4 bg-white'>
-      <div className='card-body'>
+    <div className='card col-md-4 '>
+      <div className='card-body bg-white'>
         <h2 className='card-title'>Id: {props.identificador}</h2>
         <p className='card-text'>Proveedor: {props.proveedor}</p>
         <p className='card-text'>Fecha: {props.fecha} de registro</p>
