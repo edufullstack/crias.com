@@ -18,7 +18,7 @@ const Dashboard = () => {
   };
   return (
     <div>
-      <h2>Dashboard</h2>
+      <h2 style={{ backgroundColor: 'white', padding: '10px' }}>Dashboard</h2>
       <button onClick={handleClick}>Cerrar sesion</button>
       {rol === 'master' ? (
         <>
