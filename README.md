@@ -11,25 +11,21 @@ Registro de crías con información detallada, incluyendo peso, altura, edad y d
 Monitoreo de la salud de las crías a través de la introducción de datos de temperatura, frecuencia cardiaca, frecuencia respiratoria y presión sanguínea
 Visualización de los datos de salud en gráficos para una mejor comprensión de la evolución de la salud de las crías
 Alertas personalizadas para los cuidadores en caso de que la salud de las crías sea motivo de preocupación
-Persistencia de datos utilizando la tecnología Local Storage
+Persistencia de datos utilizando la tecnología Local Storage y Redux persist
 Validaciones en los formularios para asegurar la correcta introducción de datos
 Configuración de la base de datos
+Hasheo de contrasenas
 Para hacer la conexión de la base de datos (PostgreSQL) en local, deberá crear un archivo .env dentro de la carpeta api con las credenciales de la base de datos, poniéndole los siguientes nombres a las variables:
 
 .env:
 
-
 DB_USER=
-
 
 DB_PASSWORD=
 
-
 DB_HOST=
 
-
 DB_PORT=
-
 
 DB_NAME=
 
