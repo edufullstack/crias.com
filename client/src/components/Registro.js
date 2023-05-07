@@ -80,7 +80,6 @@ const Registro = () => {
     if (Object.keys(errors).length === 0) {
       setDisabled(false);
     }
-    console.log(Object.keys(errors).length);
   };
   return (
     <>
