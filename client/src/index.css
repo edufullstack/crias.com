@@ -5,8 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('http://asisucede.com.mx/wp-content/uploads/2017/01/GANADO_II_2016.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
