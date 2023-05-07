@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import ValidateSensor from './validateSensor';
 import { addSensor } from '../redux/sensorAction';
@@ -6,6 +6,7 @@ import { actualizaSalud } from '../redux/criasActions';
 
 const Sensores = () => {
   const dispatch = useDispatch();
+  const [disabled, setDisabled] = useState(true);
   const [input, setInput] = useState({
     identificador: '',
     freCardiaca: '',
@@ -23,6 +24,19 @@ const Sensores = () => {
     temperatura: '',
     saludable: '',
   });
+
+  useEffect(() => {
+    // Recuperar los datos del localStorage
+    const formData = JSON.parse(localStorage.getItem('sensorData'));
+
+    // Si hay datos en el localStorage, establecer el estado input con esos datos
+    if (formData) {
+      setInput(formData);
+    }
+    if (Object.keys(errors).length === 0) {
+      setDisabled(false);
+    }
+  }, []);
 
   const handleInputChange = (event) => {
     event.preventDefault();
@@ -59,6 +73,15 @@ const Sensores = () => {
         [event.target.name]: event.target.value,
       })
     );
+    setDisabled(
+      Object.keys(
+        ValidateSensor({
+          ...currentInput,
+          [event.target.name]: event.target.value,
+        })
+      ).length !== 0
+    );
+    localStorage.setItem('sensorData', JSON.stringify(input));
   };
 
   const handleSubmit = (event) => {
@@ -75,6 +98,7 @@ const Sensores = () => {
       temperatura: '',
       saludable: '',
     });
+    localStorage.removeItem('sensorData');
   };
   return (
     <>
@@ -178,7 +202,11 @@ const Sensores = () => {
                 </div>
               </div>
 
-              <button type='submit' className='btn btn-primary'>
+              <button
+                disabled={disabled}
+                type='submit'
+                className='btn btn-primary'
+              >
                 Registrar
               </button>
             </div>

@@ -18,11 +18,9 @@ const updateCria = async (
   cuarentena
 ) => {
   try {
-    console.log(identificador, saludable, dieta, tratamiento, cuarentena);
     if (dieta) {
-      console.log('sie entramos');
       let cria = await Crias.update({ dieta }, { where: { identificador } });
-      console.log(cria);
+
       return cria;
     }
     if (tratamiento) {

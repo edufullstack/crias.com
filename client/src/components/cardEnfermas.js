@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { actualizaSalud, getSickCow } from '../redux/criasActions';
 
@@ -13,6 +13,16 @@ const CardEnfermas = (props) => {
     tratamiento: '',
     cuarentena: '',
   });
+
+  useEffect(() => {
+    // Recuperar los datos del localStorage
+    const formData = JSON.parse(localStorage.getItem('sickData'));
+
+    // Si hay datos en el localStorage, establecer el estado input con esos datos
+    if (formData) {
+      setInput(formData);
+    }
+  }, []);
 
   const handleClickDieta = () => {
     setShowDieta(!showDieta);
@@ -32,6 +42,7 @@ const CardEnfermas = (props) => {
       [event.target.name]: event.target.value,
       identificador: props.identificador,
     });
+    localStorage.setItem('sickData', JSON.stringify(input));
   };
   const handleUpdate = async () => {
     dispatch(actualizaSalud(input)).then(() => {
@@ -43,6 +54,7 @@ const CardEnfermas = (props) => {
         cuarentena: '',
       });
     });
+    localStorage.removeItem('sickData');
   };
 
   return (
@@ -96,6 +108,7 @@ const CardEnfermas = (props) => {
           </>
         ) : (
           <>
+            <hr></hr>
             <label>Ingresar nuevo tratamiento</label>
             <input
               name='tratamiento'
@@ -123,6 +136,7 @@ const CardEnfermas = (props) => {
           </>
         ) : (
           <>
+            <hr></hr>
             <label>Ingresar nuevo corral</label>
             <input
               className='form-control'

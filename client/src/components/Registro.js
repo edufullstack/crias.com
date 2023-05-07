@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Validate from './validate';
 import { useDispatch, useSelector } from 'react-redux';
 import { registroNuevo } from '../redux/criasActions';
 
 const Registro = () => {
   const dispatch = useDispatch();
+  const [disabled, setDisabled] = useState(true);
   const iden = useSelector((state) => state.usuario.id);
   const [input, setInput] = useState({
     proveedor: '',
+    proveedorTipo: '',
     fecha: '',
     peso: '',
     costo: '',
@@ -20,6 +22,7 @@ const Registro = () => {
   });
   const [errors, setErrors] = useState({
     proveedor: '',
+    proveedorTipo: '',
     fecha: '',
     peso: '',
     costo: '',
@@ -31,10 +34,31 @@ const Registro = () => {
     id: '',
   });
 
+  useEffect(() => {
+    // Recuperar los datos del localStorage
+    const formData = JSON.parse(localStorage.getItem('formularioData'));
+
+    // Si hay datos en el localStorage, establecer el estado input con esos datos
+    if (formData) {
+      setInput(formData);
+    }
+    if (Object.keys(errors).length === 0) {
+      setDisabled(false);
+    }
+  }, [errors]);
+
   const handleInputChange = (event) => {
     event.preventDefault();
-    setInput({ ...input, [event.target.name]: event.target.value, id: iden });
-    setErrors(Validate({ ...input, [event.target.name]: event.target.value }));
+    const newInput = {
+      ...input,
+      [event.target.name]: event.target.value,
+      id: iden,
+    };
+    const newErrors = Validate(newInput);
+    setInput(newInput);
+    setErrors(newErrors);
+    localStorage.setItem('formularioData', JSON.stringify(newInput));
+    setDisabled(Object.keys(newErrors).length !== 0);
   };
 
   const handleSubmit = (event) => {
@@ -52,6 +76,11 @@ const Registro = () => {
       tratamiento: '',
       id: '',
     });
+    localStorage.removeItem('formularioData');
+    if (Object.keys(errors).length === 0) {
+      setDisabled(false);
+    }
+    console.log(Object.keys(errors).length);
   };
   return (
     <>
@@ -157,7 +186,11 @@ const Registro = () => {
                 </div>
               </div>
 
-              <button type='submit' className='btn btn-primary'>
+              <button
+                disabled={disabled}
+                type='submit'
+                className='btn btn-primary'
+              >
                 Registrar
               </button>
             </div>

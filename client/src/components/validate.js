@@ -3,9 +3,6 @@ const Validate = (input) => {
   if (!input.proveedor) {
     errors.proveedor = 'Ingrese proovedor';
   }
-  if (!input.identificador) {
-    errors.identificador = 'Ingrese identificador';
-  }
   if (!input.peso) {
     errors.peso = 'Ingrese peso';
   }
