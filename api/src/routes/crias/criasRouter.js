@@ -9,7 +9,7 @@ const {
 router.get('/', async (req, res) => {
   try {
     let crias = await getCrias();
-    res.status(200).send(crias);
+    res.status(200).json(crias);
   } catch (error) {
     res.status(404).send(error.message);
   }
