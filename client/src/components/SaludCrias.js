@@ -13,8 +13,8 @@ const SaludCrias = () => {
   };
 
   return (
-    <div>
-      <h2>Salud crias</h2>
+    <div className='bg-white d-flex flex-column align-items-center pb-4'>
+      <h2 className='pb-2'>Salud crias</h2>
       <button onClick={handleClick}>Mostrar crias enfermas</button>
 
       {Array.isArray(crias) &&
