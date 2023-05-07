@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+Crias.com
+Este proyecto es una aplicación web para el monitoreo de la salud de las crías. La idea detrás de esta aplicación es permitir que los cuidadores de crías puedan ingresar los datos de salud de sus animales y llevar un registro detallado del mismo.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La aplicación está construida utilizando React y Redux para el front-end y Node.js con Express para el back-end. La base de datos utilizada es PostrgreSQL.
 
-## Available Scripts
+Funcionalidades
+Registro y login de usuarios
+Registro de crías con información detallada, incluyendo peso, altura, edad y datos de salud
+Monitoreo de la salud de las crías a través de la introducción de datos de temperatura, frecuencia cardiaca, frecuencia respiratoria y presión sanguínea
+Visualización de los datos de salud en gráficos para una mejor comprensión de la evolución de la salud de las crías
+Alertas personalizadas para los cuidadores en caso de que la salud de las crías sea motivo de preocupación
+Persistencia de datos utilizando la tecnología Local Storage
+Validaciones en los formularios para asegurar la correcta introducción de datos
+Configuración de la base de datos
+Para hacer la conexión de la base de datos (PostgreSQL) en local, deberá crear un archivo .env dentro de la carpeta api con las credenciales de la base de datos, poniéndole los siguientes nombres a las variables:
 
-In the project directory, you can run:
+.env:
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+DB_NAME=
 
-### `npm start`
+Uso
+Para probar todas las funcionalidades juntas, registre un tipo de usuario "master". Si desea probarlas por separado, puede ir registrando usuarios individualmente.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+La aplicación es altamente personalizable y escalable, por lo que puede ser utilizada por cuidadores de crías de diferentes especies y tamaños.
