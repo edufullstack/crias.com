@@ -13,7 +13,7 @@ const SaludCrias = () => {
   };
 
   return (
-    <div className='bg-white mx-auto my-5 p-3 shadow-lg rounded'>
+    <div>
       <h2 className='pb-2'>Salud crias</h2>
       <button onClick={handleClick}>Mostrar crias enfermas</button>
 
@@ -22,7 +22,10 @@ const SaludCrias = () => {
           .filter((cria) => !cria.saludable)
           .map((cria) => {
             return (
-              <div className={styles.cardContainer} key={cria.identificador}>
+              <div
+                className={`bg-white mx-auto my-5 p-3 shadow-lg rounded ${styles.cardContainer}`}
+                key={cria.identificador}
+              >
                 <CardEnfermas
                   identificador={cria.identificador}
                   proveedor={cria.proveedor}
