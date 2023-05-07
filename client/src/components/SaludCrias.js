@@ -13,7 +13,7 @@ const SaludCrias = () => {
   };
 
   return (
-    <div className='bg-white d-flex flex-column align-items-center pb-4'>
+    <div className='bg-white mx-auto my-5 p-3 shadow-lg rounded'>
       <h2 className='pb-2'>Salud crias</h2>
       <button onClick={handleClick}>Mostrar crias enfermas</button>
 
