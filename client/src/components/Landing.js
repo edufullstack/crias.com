@@ -23,7 +23,7 @@ const Landing = () => {
   return (
     <form
       className='mx-auto my-5 p-3 shadow-lg rounded'
-      style={{ maxWidth: 400 }}
+      style={{ maxWidth: 400, backgroundColor: 'white' }}
     >
       <div className='text-center'>
         <div className='form-group'>
