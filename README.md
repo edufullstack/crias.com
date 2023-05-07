@@ -18,6 +18,12 @@ DB_PORT=
 
 DB_NAME=
 
+### Uso
+
+Para probar todas las funcionalidades juntas, registre un tipo de usuario "master". Si desea probarlas por separado, puede ir registrando usuarios individualmente.
+
+La aplicación es altamente personalizable y escalable, por lo que puede ser utilizada por cuidadores de crías de diferentes especies y tamaños.
+
 ### Funcionalidades
 
 Registro y login de usuarios
@@ -30,9 +36,3 @@ Validaciones en los formularios para asegurar la correcta introducción de datos
 Configuración de la base de datos
 Hasheo de contrasenas
 Para hacer la conexión de la base de datos (PostgreSQL) en local, deberá crear un archivo .env dentro de la carpeta api con las credenciales de la base de datos, poniéndole los siguientes nombres a las variables:
-
-### Uso
-
-Para probar todas las funcionalidades juntas, registre un tipo de usuario "master". Si desea probarlas por separado, puede ir registrando usuarios individualmente.
-
-La aplicación es altamente personalizable y escalable, por lo que puede ser utilizada por cuidadores de crías de diferentes especies y tamaños.
