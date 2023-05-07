@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
   try {
     const { rol, password } = req.body;
     const registro = await addUser(rol, password);
-    res.status(200).send('Registro exitoso');
+    res.status(200).json(registro);
   } catch (error) {
     res.status(404).send(error.message);
   }

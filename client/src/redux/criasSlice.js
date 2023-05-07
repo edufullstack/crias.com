@@ -3,14 +3,6 @@ import { createSlice } from '@reduxjs/toolkit';
 export const criasSlice = createSlice({
   name: 'crias',
   initialState: {
-    // fecha: '',
-    // peso: '',
-    // costo: '',
-    // nomber: '',
-    // description: '',
-    // saludable: '',
-    // dieta: '',
-    // tratamiento: '',
     crias: [],
   },
   reducers: {

@@ -3,13 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 export const usuarioSlice = createSlice({
   name: 'usuario',
   initialState: {
+    id: '',
     rol: '',
   },
   reducers: {
     getRol: (state, action) => {
       return {
         ...state,
-        rol: action.payload,
+        id: action.payload.id,
+        rol: action.payload.rol,
       };
     },
     addUser: (state, action) => {
@@ -17,9 +19,16 @@ export const usuarioSlice = createSlice({
         ...state,
       };
     },
+    userOut: (state, action) => {
+      return {
+        ...state,
+        id: '',
+        rol: '',
+      };
+    },
   },
 });
 
-export const { getRol, addUser } = usuarioSlice.actions;
+export const { getRol, addUser, userOut } = usuarioSlice.actions;
 
 export default usuarioSlice.reducer;

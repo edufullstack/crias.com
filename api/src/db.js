@@ -37,19 +37,15 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Usuario, Proveedor, Crias, Sensor } = sequelize.models;
+const { Usuario, Crias, Sensor } = sequelize.models;
 
-Usuario.hasMany(Crias, {
+Crias.belongsTo(Usuario, {
   foreignKey: 'usuario_cria',
   timestamps: false,
 });
+
 Sensor.belongsTo(Crias, {
   foreignKey: 'sensor_cria',
-  timestamps: false,
-});
-
-Proveedor.hasMany(Crias, {
-  foreignKey: 'proveedor_cria',
   timestamps: false,
 });
 

@@ -6,13 +6,14 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
     proveedor: {
       type: DataTypes.STRING,
       allowNull: true,
     },
     fecha: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     peso: {
@@ -34,13 +35,18 @@ module.exports = (sequelize) => {
     saludable: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
+      defaultValue: true,
     },
     dieta: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     tratamiento: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    cuarentena: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
   });

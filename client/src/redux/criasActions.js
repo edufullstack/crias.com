@@ -5,11 +5,7 @@ export const getSickCow = () => {
   return async (dispatch) => {
     try {
       let crias = await axios(`/crias/`);
-      if (typeof crias === 'string') {
-        alert(crias);
-      } else {
-        return dispatch(getSick(crias));
-      }
+      return dispatch(getSick(crias.data));
     } catch (error) {
       alert('No se encontraron registros');
     }
@@ -23,7 +19,17 @@ export const registroNuevo = (input) => {
       if (registro.status === 200) {
         alert('Registro exitoso');
       }
-      console.log(registro);
+      return dispatch(addCow(registro));
+    } catch (error) {
+      alert('No se pudo registrar');
+    }
+  };
+};
+
+export const actualizaSalud = (input) => {
+  return async (dispatch) => {
+    try {
+      let registro = await axios.put('/crias/', input);
       return dispatch(addCow(registro));
     } catch (error) {
       alert('No se pudo registrar');
