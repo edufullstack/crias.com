@@ -17,7 +17,11 @@ Configuración de la base de datos
 Para hacer la conexión de la base de datos (PostgreSQL) en local, deberá crear un archivo .env dentro de la carpeta api con las credenciales de la base de datos, poniéndole los siguientes nombres a las variables:
 
 .env:
+
+
 DB_USER=
+
+
 DB_PASSWORD=
 DB_HOST=
 DB_PORT=
