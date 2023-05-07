@@ -85,9 +85,15 @@ const CardEnfermas = (props) => {
           </>
         )}
         {!showTratamiento ? (
-          <button className='btn btn-primary' onClick={handleClickTratamiento}>
-            Modificar tratamiento
-          </button>
+          <>
+            <hr></hr>
+            <button
+              className='btn btn-primary'
+              onClick={handleClickTratamiento}
+            >
+              Modificar tratamiento
+            </button>
+          </>
         ) : (
           <>
             <label>Ingresar nuevo tratamiento</label>
@@ -109,9 +115,12 @@ const CardEnfermas = (props) => {
           </>
         )}
         {!showCuarentena ? (
-          <button className='btn btn-primary' onClick={handleClickCuarentena}>
-            Modificar Cuarentena
-          </button>
+          <>
+            <hr></hr>
+            <button className='btn btn-primary' onClick={handleClickCuarentena}>
+              Modificar Cuarentena
+            </button>
+          </>
         ) : (
           <>
             <label>Ingresar nuevo corral</label>

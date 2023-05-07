@@ -5,6 +5,7 @@ import axios from 'axios';
 import AgregarUsuarios from './components/agregarUsuarios';
 import Dashboard from './components/dashboard';
 axios.defaults.baseURL = 'http://localhost:3001/api';
+// axios.defaults.baseURL = 'https://crias.onrender.com/api';
 
 function App() {
   return (
