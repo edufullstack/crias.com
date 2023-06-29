@@ -9,7 +9,7 @@ const Landing = () => {
   const [usuario, setUsuario] = useState({ id: '', password: '' });
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [hidden, setHidden] =  false
+  const [hidden, setHidden] =  useState(false)
 
   const handleButton = ()=>{
     setHidden(!hidden)
