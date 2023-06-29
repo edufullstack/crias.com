@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getUsuario } from '../redux/usuarioActions';
 import { useNavigate } from 'react-router-dom';
+import './landing.css'
 
 const Landing = () => {
   const [usuario, setUsuario] = useState({ id: '', password: '' });
@@ -21,7 +22,19 @@ const Landing = () => {
     navigate('/agregar');
   };
   return (
-    <form
+    <div >
+      <div className='navbar'>
+      <p>Rancho La Aurora</p>
+      <div className='contenedor-boton__navbar'>
+
+      <button>Inicio</button>
+      <button>Nosotros</button>
+      <button>Contacto</button>
+      <button>Ingresar</button>
+      </div>
+      </div>
+    
+    <form hidden='true'
       className='mx-auto my-5 p-3 shadow-lg rounded'
       style={{ maxWidth: 400, backgroundColor: 'white' }}
     >
@@ -58,6 +71,14 @@ const Landing = () => {
         </div>
       </div>
     </form>
+
+    <div className='contenedor-naranja'>
+      <p>100% <br/>Producto Organico</p>
+      <div></div>
+      <p>100% <br/>Producto Mexicano</p>
+    </div>
+
+    </div>
   );
 };
 export default Landing;
