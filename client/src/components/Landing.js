@@ -9,6 +9,11 @@ const Landing = () => {
   const [usuario, setUsuario] = useState({ id: '', password: '' });
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [hidden, setHidden] =  false
+
+  const handleButton = ()=>{
+    setHidden(!hidden)
+  }
 
   const handleInputChange = (event) => {
     setUsuario({ ...usuario, [event.target.name]: event.target.value });
@@ -30,11 +35,11 @@ const Landing = () => {
       <button>Inicio</button>
       <button>Nosotros</button>
       <button>Contacto</button>
-      <button>Ingresar</button>
+      <button onClick={handleButton}>Ingresar</button>
       </div>
       </div>
     
-    <form hidden='true'
+    <form hidden={hidden}
       className='mx-auto my-5 p-3 shadow-lg rounded'
       style={{ maxWidth: 400, backgroundColor: 'white' }}
     >
