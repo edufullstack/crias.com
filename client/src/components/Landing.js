@@ -39,7 +39,7 @@ const Landing = () => {
       </div>
       </div>
     
-    <form hidden={hidden}
+    <form hidden={!hidden}
       className='mx-auto my-5 p-3 shadow-lg rounded'
       style={{ maxWidth: 400, backgroundColor: 'white' }}
     >
